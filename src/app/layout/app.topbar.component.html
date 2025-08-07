@@ -1,0 +1,41 @@
+<p-menubar [model]="menuItems" class="header-menubar">
+  <ng-template pTemplate="start">
+    <img [src]="imageUrl" alt="ASA Logo" class="h-10 w-24 object-contain"/>
+  </ng-template>
+  <ng-template pTemplate="end">
+    <div class="flex items-center gap-3">
+      <div class="w-px h-6 bg-gray-300"></div>
+      <button pButton icon="pi pi-search" class="p-button-text"></button>
+      <button pButton class="p-button-text  flex items-center gap-1">
+        <i class="pi pi-user"></i>
+        <span>Log in</span>
+      </button>
+      <p-dropdown
+        [options]="languages"
+        [(ngModel)]="selectedLanguage"
+        optionLabel="label"
+        [autoDisplayFirst]="false"
+        [showClear]="false"
+        placeholder="EN"
+        [style]="{ width: 'auto', minWidth: '100px' }">
+        <ng-template let-option pTemplate="selectedItem">
+          <div class="flex items-center">
+            @if (option?.flag) {
+              <img [src]="option?.flag" class="w-5 h-[14px] object-cover rounded-sm mr-2"/>
+            }
+            <span class="text-sm font-medium">{{ option.label }}</span>
+          </div>
+        </ng-template>
+
+        <ng-template let-option pTemplate="item">
+          <div class="flex items-center">
+            @if (option?.flag) {
+              <img [src]="option?.flag" class="w-5 h-[14px] object-cover rounded-sm mr-2"/>
+            }
+            <span class="text-sm font-medium">{{ option.label }}</span>
+          </div>
+        </ng-template>
+      </p-dropdown>
+    </div>
+  </ng-template>
+</p-menubar>

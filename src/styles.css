@@ -1,0 +1,56 @@
+@import "primeicons/primeicons.css";
+@import "../node_modules/quill/dist/quill.core.css";
+@import "../node_modules/quill/dist/quill.snow.css";
+
+@import "tailwindcss";
+@plugin "tailwindcss-primeui";
+
+:root {
+  --wp--preset--font-size--small: 14px;
+}
+
+body,
+.p-component {
+  font-family: 'Inter', sans-serif;
+  font-size: var(--wp--preset--font-size--small);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::ng-deep .header-menubar {
+  background: white;
+  border: none;
+  padding: 1rem 2rem;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+::ng-deep .header-menubar .p-menuitem-link {
+  font-size: var(--wp--preset--font-size--small);
+  color: #333;
+  font-weight: 500;
+}
+
+::ng-deep .right-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+::ng-deep .divider {
+  width: 1px;
+  height: 30px;
+  background: #ccc;
+  margin-right: 1rem;
+}
+
+::ng-deep .lang-dropdown .p-dropdown-label,
+::ng-deep .lang-dropdown .p-dropdown-item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+::ng-deep .lang-item img {
+  border-radius: 2px;
+}

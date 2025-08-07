@@ -1,0 +1,112 @@
+<div class="container">
+  <div class="w-full h-full">
+    <p-galleria
+      [value]="images"
+      [showItemNavigators]="true"
+      [showThumbnails]="false"
+      [showIndicators]="true"
+      [autoPlay]="true"
+      [showItemNavigatorsOnHover]="true"
+      [circular]="true"
+      [responsiveOptions]="responsiveOptions"
+      [containerStyle]="{ height: '100%', width: '100%' }"
+    >
+      <ng-template pTemplate="item" let-item>
+        <img [src]="item.itemImageSrc" alt="slider image" class="w-full h-full object-cover"/>
+      </ng-template>
+      <ng-template pTemplate="thumbnail" let-item>
+        <img [src]="item.thumbnailImageSrc" alt="thumbnail" class="w-16 h-16 object-cover"/>
+      </ng-template>
+    </p-galleria>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-8 px-8 py-12 bg-white">
+    <!-- Left -->
+    <div class="flex justify-center">
+      <img
+        src="https://asatecs.com/wp-content/uploads/2025/07/Screenshot-2025-06-14-220413.png"
+        alt="ASATEC Overview"
+        class="w-full h-full max-w-md h-auto object-contain"
+      />
+    </div>
+    <!-- Right -->
+    <div>
+      <h2 class="text-3xl font-semibold text-gray-800 mb-4">
+        Leading supplier of IoT modules and solutions
+      </h2>
+      <div class="w-10 h-1 bg-red-600 mb-4"></div>
+      <p class="leading-relaxed mb-6">
+        ASATEC Co., Ltd, founded in 2023, is a forward looking and dynamic company that has swiftly risen to
+        prominence in the realm of electrical solutions and infrastructure development. Our firm is built upon a
+        robust base of expertise and innovation, making us a key player in this industry.
+        We specialize in delivering comprehensive services encompassing electrical infrastructure design,
+        construction of electrical distribution networks, expert consulting, testing and commissioning, power
+      </p>
+      <button class="px-6 py-2 border border-gray-800 text-gray-800 hover:bg-[#050045] hover:text-white transition rounded">
+        + Learn more
+      </button>
+    </div>
+  </div>
+<!--  block products-->
+  <div class="w-full bg-cover bg-no-repeat bg-center py-24 px-6"
+       style="background-image: url('https://www.groovypost.com/wp-content/uploads/2022/08/cpu-chip-example.png');">
+    <div class="grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto h-[250px]">
+      <div class="bg-red-600 text-white p-6 shadow-md flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10">
+        <div class="flex-1 flex flex-col justify-between h-full">
+          <div>
+            <h2 class="text-xl font-semibold mb-2">Products</h2>
+            <p class="text-sm mb-4">Performance, Stability, Flexibility</p>
+            <div class="w-10 h-1 bg-white mb-4"></div>
+          </div>
+          <div>
+            <a href="#" class="text-white text-sm mt-4 inline-block hover:underline">+ Learn more</a>
+          </div>
+        </div>
+        <div class="flex-1 flex justify-center">
+          <img src="https://www.vyprvpn.com/site/assets/files/2030/image.800x0.jpeg" alt="product image" class="max-w-full h-auto md:w-80" />
+        </div>
+      </div>
+      <div class="bg-white text-gray-800 p-6 shadow-md flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10">
+        <div class="flex-1 flex flex-col justify-between h-full">
+          <div>
+            <h2 class="text-2xl font-semibold mb-2">Application Cases</h2>
+            <p class="text-sm mb-2">Power monitoring<br />Industries</p>
+            <div class="w-10 h-1 bg-red-600 mb-4"></div>
+          </div>
+          <div>
+            <a href="#" class="text-red-600 text-sm hover:underline">+ Learn more</a>
+          </div>
+        </div>
+        <div class="flex-1 flex justify-center">
+          <img src="https://www.groovypost.com/wp-content/uploads/2022/08/cpu-chip-example.png" alt="application image" class="max-w-full h-auto md:w-80" />
+        </div>
+      </div>
+    </div>
+  </div>
+<!--  block power-->
+  <div class="w-full bg-cover bg-no-repeat bg-center py-24 px-6"
+    style="background-image: url('https://w0.peakpx.com/wallpaper/798/371/HD-wallpaper-cup-of-coffee-near-macbook-pro.jpg');">
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center bg-white/70 backdrop-blur-sm rounded-lg p-8">
+      <!-- Left -->
+      <div>
+        <h2 class="text-3xl font-semibold text-gray-800 mb-4">
+          ASATEC <span class="text-red-600 font-bold">power</span> solutions
+        </h2>
+        <p class="leading-relaxed text-sm md:text-base">
+          Advanced intelligence device* can refer to several things, but it generally
+          describes a device incorporating sophisticated artificial intelligence (AI)
+          technology. These devices can perform complex tasks, analyze data, and make
+          decisions in a way that mimics human intelligence, such as through machine
+          learning or natural language processing.
+        </p>
+      </div>
+      <!-- Right optional -->
+      <div class="hidden md:block"></div>
+    </div>
+  </div>
+  <!-- Official Videos -->
+  <div>
+    <app-videos></app-videos>
+  </div>
+
+</div>
