@@ -1,11 +1,16 @@
-<p-menubar [model]="menuItems" class="header-menubar">
+<p-menubar [model]="menuItems"
+           class="header-menubar fixed top-0 left-0 w-full z-50 "
+           [style]="{border: 'none', borderRadius: '0'}">
   <ng-template pTemplate="start">
     <img [src]="imageUrl" alt="ASA Logo" class="h-10 w-24 object-contain"/>
   </ng-template>
   <ng-template pTemplate="end">
     <div class="flex items-center gap-3">
-      <div class="w-px h-6 bg-gray-300"></div>
-      <button pButton icon="pi pi-search" class="p-button-text"></button>
+      <div class="w-px h-6"></div>
+      <p-floatlabel variant="on">
+        <input pInputText id="on_label" pSize="small" autocomplete="off"/>
+        <label for="on_label">Search</label>
+      </p-floatlabel>
       <button pButton class="p-button-text  flex items-center gap-1">
         <i class="pi pi-user"></i>
         <span>Log in</span>
@@ -39,3 +44,4 @@
     </div>
   </ng-template>
 </p-menubar>
+
