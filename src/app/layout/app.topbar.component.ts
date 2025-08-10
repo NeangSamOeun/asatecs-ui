@@ -8,7 +8,7 @@ import {Component} from '@angular/core';
 export class AppTopbarComponent {
   imageUrl = 'assets/images/logo.png';
   menuItems = [
-    { label: 'Product' },
+    { label: 'Product', routerLink: '/products/list' },
     { label: 'IoT Application' },
     { label: 'Service and Support' },
     { label: 'Media and Resources' },

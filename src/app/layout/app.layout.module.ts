@@ -11,6 +11,8 @@ import {DropdownModule} from 'primeng/dropdown';
 import {FormsModule} from '@angular/forms';
 import {ButtonDirective} from 'primeng/button';
 import {RouterOutlet} from '@angular/router';
+import {FloatLabel} from 'primeng/floatlabel';
+import {InputText} from 'primeng/inputtext';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import {RouterOutlet} from '@angular/router';
     FormsModule,
     ButtonDirective,
     RouterOutlet,
+    FloatLabel,
+    InputText,
   ],
   exports: [AppLayoutComponent]
 })

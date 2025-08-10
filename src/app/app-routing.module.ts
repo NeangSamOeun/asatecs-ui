@@ -10,10 +10,13 @@ const routes: Routes = [
       {
         path: 'asatecs',
         loadChildren: () => import('./components/home-component/home.module').then(m => m.HomeModule)
+      },
+      {
+        path: 'products',
+        loadChildren: ()   => import('./components/product/product.module').then(m => m.ProductModule)
       }
     ],
   }
-
 
 ];
 
