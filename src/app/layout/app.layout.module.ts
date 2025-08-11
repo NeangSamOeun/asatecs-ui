@@ -10,7 +10,7 @@ import {Menubar} from 'primeng/menubar';
 import {DropdownModule} from 'primeng/dropdown';
 import {FormsModule} from '@angular/forms';
 import {ButtonDirective} from 'primeng/button';
-import {RouterOutlet} from '@angular/router';
+import {RouterLink, RouterOutlet} from '@angular/router';
 import {FloatLabel} from 'primeng/floatlabel';
 import {InputText} from 'primeng/inputtext';
 
@@ -31,6 +31,7 @@ import {InputText} from 'primeng/inputtext';
     RouterOutlet,
     FloatLabel,
     InputText,
+    RouterLink,
   ],
   exports: [AppLayoutComponent]
 })
