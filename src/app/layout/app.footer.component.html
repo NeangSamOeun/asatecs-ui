@@ -1,88 +1,111 @@
 <div style="margin-top: 10px">
-  <footer class="bg-[#050045] text-white text-sm pt-10 pb-6">
+  <footer class="bg-[#050045] text-white text-sm pt-10 pb-7">
     <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-6 gap-6 border-b border-white/20 pb-8">
+      <!-- Top: columns -->
+      <div class="grid grid-cols-1 md:grid-cols-7 gap-6 border-b border-white/20 pb-8">
         <!-- Contact Us -->
-        <div class="col-span-1 md:col-span-1 space-y-2">
+        <section class="space-y-2">
           <div class="flex items-center gap-2">
             <i class="pi pi-headphones text-red-500 text-xl"></i>
-            <span class="text-lg font-semibold">Contact Us</span>
+            <h3 class="text-lg font-semibold">Contact Us</h3>
           </div>
-          <p class="text-red-500 font-semibold">+855 86 838 839</p>
-          <p>Technical Support</p>
-          <p>Sales Support</p>
-          <p>Market&Media</p>
-        </div>
+          <a href="tel:+85586838839" class="text-red-500 font-semibold hover:underline">
+            +855 86 838 839
+          </a>
+          <ul class="space-y-1">
+            <li><a href="#" class="hover:underline">Technical Support</a></li>
+            <li><a href="#" class="hover:underline">Sales Support</a></li>
+            <li><a href="#" class="hover:underline">Market &amp; Media</a></li>
+          </ul>
+        </section>
 
         <!-- Product -->
-        <div class="space-y-2">
-          <p class="font-semibold">Product</p>
-          <p>Electrical Equipment</p>
-          <p>Panel Builder</p>
-          <p>Electrical Infrastructure</p>
-          <p>Maintenance</p>
-          <p>EE Repairing</p>
-          <p>MEP</p>
-        </div>
+        <nav aria-label="Product" class="space-y-2">
+          <h3 class="font-semibold">Product</h3>
+          <ul class="space-y-1">
+            <li><a href="#" class="hover:underline">Electrical Equipment</a></li>
+            <li><a href="#" class="hover:underline">Panel Builder</a></li>
+            <li><a href="#" class="hover:underline">Electrical Infrastructure</a></li>
+            <li><a href="#" class="hover:underline">Maintenance</a></li>
+            <li><a href="#" class="hover:underline">EE Repairing</a></li>
+            <li><a href="#" class="hover:underline">MEP</a></li>
+          </ul>
+        </nav>
 
         <!-- IoT Application -->
-        <div class="space-y-2">
-          <p class="font-semibold">IoT Application</p>
-          <p>Advance Intelligence Devices</p>
-          <p>Smart Energy</p>
-          <p>Automation PLC</p>
-          <p>Smart Agriculture</p>
-          <p>Security Monitoring</p>
-          <p>Urban Refined Management</p>
-          <p>Smart Industry</p>
-        </div>
+        <nav aria-label="IoT Application" class="space-y-2">
+          <h3 class="font-semibold">IoT Application</h3>
+          <ul class="space-y-1">
+            <li><a href="#" class="hover:underline">Advance Intelligence Devices</a></li>
+            <li><a href="#" class="hover:underline">Smart Energy</a></li>
+            <li><a href="#" class="hover:underline">Automation PLC</a></li>
+            <li><a href="#" class="hover:underline">Smart Agriculture</a></li>
+            <li><a href="#" class="hover:underline">Security Monitoring</a></li>
+            <li><a href="#" class="hover:underline">Urban Refined Management</a></li>
+            <li><a href="#" class="hover:underline">Smart Industry</a></li>
+          </ul>
+        </nav>
 
         <!-- Service and Support -->
-        <div class="space-y-2">
-          <p class="font-semibold">Service and Support</p>
-          <p>Download</p>
-          <p>Certification</p>
-          <p>FAQ</p>
-          <p>Online Questions</p>
-          <p>Distributors</p>
-          <p>Request Quote</p>
-          <p>Online store</p>
-        </div>
+        <nav aria-label="Service and Support" class="space-y-2">
+          <h3 class="font-semibold">Service and Support</h3>
+          <ul class="space-y-1">
+            <li><a href="#" class="hover:underline">Download</a></li>
+            <li><a href="#" class="hover:underline">Certification</a></li>
+            <li><a href="#" class="hover:underline">FAQ</a></li>
+            <li><a href="#" class="hover:underline">Online Questions</a></li>
+            <li><a href="#" class="hover:underline">Distributors</a></li>
+            <li><a href="#" class="hover:underline">Request Quote</a></li>
+            <li><a href="#" class="hover:underline">Online store</a></li>
+          </ul>
+        </nav>
 
-        <!-- Media and About -->
-        <div class="space-y-2">
-          <p class="font-semibold">Media and Resources</p>
-          <p>Company News</p>
-          <p>Market Events</p>
-          <p>Case Studies</p>
-          <p>IoT Simple Talk</p>
-          <p>Newsletter</p>
-          <p>Videos</p>
+        <!-- Media and Resources -->
+        <nav aria-label="Media and Resources" class="space-y-2">
+          <h3 class="font-semibold">Media and Resources</h3>
+          <ul class="space-y-1">
+            <li><a href="#" class="hover:underline">Company News</a></li>
+            <li><a href="#" class="hover:underline">Market Events</a></li>
+            <li><a href="#" class="hover:underline">Case Studies</a></li>
+            <li><a href="#" class="hover:underline">IoT Simple Talk</a></li>
+            <li><a href="#" class="hover:underline">Newsletter</a></li>
+            <li><a href="#" class="hover:underline">Videos</a></li>
+          </ul>
+        </nav>
 
-          <p class="font-semibold mt-4">About Us</p>
-          <p>Company Profile</p>
-          <p>Enterprise Honor</p>
-          <p>Partners</p>
-          <p>Careers</p>
-          <p>Contact Us</p>
-        </div>
+        <!-- About Us -->
+        <nav aria-label="About Us" class="space-y-2">
+          <h3 class="font-semibold">About Us</h3>
+          <ul class="space-y-1">
+            <li><a href="#" class="hover:underline">Company Profile</a></li>
+            <li><a href="#" class="hover:underline">Enterprise Honor</a></li>
+            <li><a href="#" class="hover:underline">Partners</a></li>
+            <li><a href="#" class="hover:underline">Careers</a></li>
+            <li><a href="#" class="hover:underline">Contact Us</a></li>
+          </ul>
+        </nav>
 
-        <!-- Follow Us (QR Code) -->
-        <div class="space-y-2 text-center md:text-left">
-          <p class="font-semibold">Follow Us</p>
+        <!-- Follow Us -->
+        <section class="space-y-2 text-center md:text-left">
+          <h3 class="font-semibold">Follow Us</h3>
           <p>Telegram</p>
-          <img src="https://docs.lightburnsoftware.com/legacy/img/QRCode/ExampleCode.png" alt="QR Code"
-               class="mx-auto md:mx-0 w-28 h-28 object-contain"/>
-        </div>
+          <img
+            src="assets/images/image/telegram_qr.png"
+            alt="ASATEC Telegram QR"
+            class="mx-auto md:mx-0 w-28 h-28 object-contain rounded-lg ring-1 ring-white/20"
+            loading="lazy"
+          />
+        </section>
       </div>
 
-      <!-- Bottom Footer -->
-      <div class="text-center flex flex-col md:flex-row justify-between items-center pt-6 text-xs text-white/80">
+      <!-- Bottom bar -->
+      <div class="text-center flex flex-col md:flex-row justify-between items-center pt-6 text-xs text-white/80 gap-2">
         <p>Copyright © 2025 ASATEC CO., LTD. All Rights Reserved.</p>
-        <p class="mt-2 md:mt-0">Privacy policy</p>
+        <a href="#" class="hover:underline">Privacy policy</a>
       </div>
     </div>
   </footer>
+
 </div>
 
 
