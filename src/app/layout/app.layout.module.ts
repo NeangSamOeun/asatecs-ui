@@ -13,6 +13,7 @@ import {ButtonDirective} from 'primeng/button';
 import {RouterLink, RouterOutlet} from '@angular/router';
 import {FloatLabel} from 'primeng/floatlabel';
 import {InputText} from 'primeng/inputtext';
+import {TranslocoPipe} from '@jsverse/transloco';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {InputText} from 'primeng/inputtext';
     FloatLabel,
     InputText,
     RouterLink,
+    TranslocoPipe,
   ],
   exports: [AppLayoutComponent]
 })

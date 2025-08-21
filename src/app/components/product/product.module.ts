@@ -14,29 +14,33 @@ import {Breadcrumb} from 'primeng/breadcrumb';
 import {InputText} from 'primeng/inputtext';
 import {ProgressSpinner} from 'primeng/progressspinner';
 import {Paginator} from 'primeng/paginator';
+import {TranslocoPipe} from '@jsverse/transloco';
+import {Image} from "primeng/image";
 
 @NgModule({
   declarations: [
     ProductListComponent,ProductDetailComponent
   ],
-  imports: [
-    RouterModule.forChild([
-      {path: 'list', component: ProductListComponent},
-      {path: 'detail/:id', component: ProductDetailComponent}
-    ]),
-    CommonModule,
-    Accordion,
-    AccordionTab,
-    Checkbox,
-    FormsModule,
-    PrimeTemplate,
-    ButtonDirective,
-    Card,
-    Tag,
-    Breadcrumb,
-    InputText,
-    ProgressSpinner,
-    Paginator,
-  ]
+    imports: [
+        RouterModule.forChild([
+            {path: 'list', component: ProductListComponent},
+            {path: 'detail/:id', component: ProductDetailComponent}
+        ]),
+        CommonModule,
+        Accordion,
+        AccordionTab,
+        Checkbox,
+        FormsModule,
+        PrimeTemplate,
+        ButtonDirective,
+        Card,
+        Tag,
+        Breadcrumb,
+        InputText,
+        ProgressSpinner,
+        Paginator,
+        TranslocoPipe,
+        Image,
+    ]
 })
 export class ProductModule { }

@@ -31,12 +31,12 @@ export class ProductListComponent {
     {title: 'Other'}
   ];
   products: Products[] = [
-    { id: 1, name: 'Power Transformer', image: 'assets/images/image/cpu.png', spec: '1250kVA, Outdoor', categoryKey: 'transformer'},
-    { id: 2, name: 'Auto Recloser 24kV', image: 'assets/images/image/power_t.png', spec: '1250kVA, Outdoor', categoryKey: 'switchgear'},
-    { id: 3, name: 'Load Break Switch', image: 'assets/images/image/cpu.png', spec: '1250kVA, Outdoor', categoryKey: 'switchgear'},
-    { id: 4, name: 'Ring Main Unit', image: 'assets/images/image/cpu.png', spec: '1250kVA, Outdoor', categoryKey: 'switchgear'},
-    { id: 5, name: 'Electrical Cable', image: 'assets/images/image/electrical_cable.png', spec: '1250kVA, Outdoor', categoryKey: 'cable'},
-    { id: 6, name: 'Line post Insulator', image: 'assets/images/image/cpu.png', spec: '1250kVA, Outdoor', categoryKey: 'accessories'}
+    { id: 1, name: 'Power Transformer', image: 'assets/images/image/image8.jpg', spec: '1250kVA, Outdoor', categoryKey: 'transformer'},
+    { id: 2, name: 'Auto Recloser 24kV', image: 'assets/images/image/image6.jpg', spec: '1250kVA, Outdoor', categoryKey: 'switchgear'},
+    { id: 3, name: 'Load Break Switch', image: 'assets/images/image/image7.jpg', spec: '1250kVA, Outdoor', categoryKey: 'switchgear'},
+    { id: 4, name: 'Ring Main Unit', image: 'assets/images/image/image8.jpg', spec: '1250kVA, Outdoor', categoryKey: 'switchgear'},
+    { id: 5, name: 'Electrical Cable', image: 'assets/images/image/image9.jpg', spec: '1250kVA, Outdoor', categoryKey: 'cable'},
+    { id: 6, name: 'Line post Insulator', image: 'assets/images/image/image10.jpg', spec: '1250kVA, Outdoor', categoryKey: 'accessories'}
   ];
   constructor() {}
 
