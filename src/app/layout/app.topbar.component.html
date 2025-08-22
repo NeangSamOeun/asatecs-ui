@@ -12,11 +12,11 @@
       <div class="w-px h-6"></div>
 
       <p-floatlabel variant="on" class="w-full md:w-auto">
-        <input pInputText id="search" pSize="small" autocomplete="off" />
-        <label for="search">{{ 'SEARCH' | transloco }}</label>
+        <input pInputText id="search" pSize="small" autocomplete="off" style="border-color: #e5e7eb"/>
+        <label style="color: #334155" for="search">{{ 'SEARCH' | transloco }}</label>
       </p-floatlabel>
 
-      <button pButton class="p-button-text flex items-center gap-1">
+      <button pButton class="p-button-text flex items-center gap-1 " style="color: #334155">
         <i class="pi pi-user"></i>
         <span>{{ 'LOGIN' | transloco }}</span>
       </button>
@@ -29,7 +29,7 @@
         [showClear]="false"
         placeholder="EN"
         (onChange)="onLanguageChange($event)"
-        [style]="{ width: 'auto', minWidth: '100px' }">
+        [style]="{ width: 'auto', minWidth: '100px', borderColor: '#e5e7eb' }">
 
         <ng-template let-option pTemplate="selectedItem">
           <div class="flex items-center">

@@ -2,9 +2,9 @@
   <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-6">
     <div class="mx-auto text-center md:text-left">
       <h1 class="text-4xl font-bold">
-        <span class="text-red-500">{{'HERO.PRODUCT' | transloco}}</span> {{'HERO.SELECTION' | transloco}}
+        <span class="text-red-500">{{ 'HERO.PRODUCT' | transloco }}</span> {{ 'HERO.SELECTION' | transloco }}
       </h1>
-      <p class="mt-2 text-gray-600">{{'HERO.TAGLINE' | transloco}}</p>
+      <p class="mt-2 text-gray-800">{{ 'HERO.TAGLINE' | transloco }}</p>
     </div>
     <div class="flex justify-center">
       <img src="assets/images/image/cpu.png" alt="CPU"
@@ -53,7 +53,8 @@
               </p-accordionTab>
             }
           </p-accordion>
-          <button pButton type="button" (click)="clearAll()" icon="pi pi-times" [label]="'ACTIONS.CLEAR_ALL' | transloco"
+          <button pButton type="button" (click)="clearAll()" icon="pi pi-times"
+                  [label]="'ACTIONS.CLEAR_ALL' | transloco"
                   severity="danger" class="w-full mt-4"></button>
         </div>
       </div>
