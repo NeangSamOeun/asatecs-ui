@@ -1,20 +1,26 @@
-<p-menubar [model]="menuItems"
-           class="header-menubar fixed top-0 left-0 w-full z-50 "
-           [style]="{border: 'none', borderRadius: '0'}">
+<p-menubar
+  [model]="menuItems"
+  class="header-menubar fixed top-0 left-0 w-full z-50"
+  [style]="{ border: 'none', borderRadius: '0' }">
+
   <ng-template pTemplate="start">
-    <img [src]="imageUrl" alt="ASA Logo" class="h-10 w-24 object-contain cursor-pointer" routerLink="/"/>
+    <img src="assets/images/logo.png" alt="Logo" class="h-10 w-24 object-contain cursor-pointer" routerLink="/" />
   </ng-template>
+
   <ng-template pTemplate="end">
     <div class="flex items-center gap-3">
       <div class="w-px h-6"></div>
-      <p-floatlabel variant="on">
-        <input pInputText id="on_label" pSize="small" autocomplete="off"/>
-        <label for="on_label">Search</label>
+
+      <p-floatlabel variant="on" class="w-full md:w-auto">
+        <input pInputText id="search" pSize="small" autocomplete="off" style="border-color: #e5e7eb"/>
+        <label style="color: #334155" for="search">{{ 'SEARCH' | transloco }}</label>
       </p-floatlabel>
-      <button pButton class="p-button-text  flex items-center gap-1">
+
+      <button pButton class="p-button-text flex items-center gap-1 " style="color: #334155">
         <i class="pi pi-user"></i>
-        <span>Log in</span>
+        <span>{{ 'LOGIN' | transloco }}</span>
       </button>
+
       <p-dropdown
         [options]="languages"
         [(ngModel)]="selectedLanguage"
@@ -22,11 +28,13 @@
         [autoDisplayFirst]="false"
         [showClear]="false"
         placeholder="EN"
-        [style]="{ width: 'auto', minWidth: '100px' }">
+        (onChange)="onLanguageChange($event)"
+        [style]="{ width: 'auto', minWidth: '100px', borderColor: '#e5e7eb' }">
+
         <ng-template let-option pTemplate="selectedItem">
           <div class="flex items-center">
             @if (option?.flag) {
-              <img [src]="option?.flag" class="w-5 h-[14px] object-cover rounded-sm mr-2"/>
+              <img [src]="option.flag" class="w-5 h-[14px] object-cover rounded-sm mr-2" />
             }
             <span class="text-sm font-medium">{{ option.label }}</span>
           </div>
@@ -35,7 +43,7 @@
         <ng-template let-option pTemplate="item">
           <div class="flex items-center">
             @if (option?.flag) {
-              <img [src]="option?.flag" class="w-5 h-[14px] object-cover rounded-sm mr-2"/>
+              <img [src]="option.flag" class="w-5 h-[14px] object-cover rounded-sm mr-2" />
             }
             <span class="text-sm font-medium">{{ option.label }}</span>
           </div>
@@ -44,4 +52,3 @@
     </div>
   </ng-template>
 </p-menubar>
-

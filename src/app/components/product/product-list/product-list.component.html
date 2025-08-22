@@ -1,86 +1,92 @@
-<div class="grid grid-cols-1 md:grid-cols-2 items-center gap-6">
-  <div class="mx-auto text-center md:text-left">
-    <h1 class="text-4xl font-bold">
-      <span class="text-red-500">Product</span> Selection
-    </h1>
-    <p class="mt-2 text-gray-600">Leader in the Electrical Solutions</p>
+<div class="container mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-6">
+    <div class="mx-auto text-center md:text-left">
+      <h1 class="text-4xl font-bold">
+        <span class="text-red-500">{{ 'HERO.PRODUCT' | transloco }}</span> {{ 'HERO.SELECTION' | transloco }}
+      </h1>
+      <p class="mt-2 text-gray-800">{{ 'HERO.TAGLINE' | transloco }}</p>
+    </div>
+    <div class="flex justify-center">
+      <img src="assets/images/image/cpu.png" alt="CPU"
+           class="w-64 h-64 object-contain md:w-70 md:h-70">
+    </div>
   </div>
-  <div class="flex justify-center">
-    <img src="assets/images/image/cpu.png" alt="CPU"
-         class="w-64 h-64 object-contain md:w-70 md:h-70">
-  </div>
-</div>
-<!-- products-page.component.html -->
-<div class="px-6 pt-4">
-  <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
-    <!-- Sidebar -->
-    <div class="space-y-5 p-4 bg-white rounded-xl border border-gray-200">
-      <div class="lg:col-span-1">
+  <!-- products-page.component.html -->
+  <div class="px-6 pt-4">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      <!-- Sidebar -->
+      <div class="space-y-5 p-4 bg-white rounded-xl border border-gray-200">
+        <div class="lg:col-span-1">
 
-        <!-- Search -->
-        <div class="mb-4">
+          <!-- Search -->
+          <div class="mb-4">
         <span class="p-input-icon-left w-full">
           <input pInputText [(ngModel)]="q" placeholder="Search" class="w-full"/>
         </span>
-        </div>
-        <!-- Filters -->
-        <p-accordion [multiple]="true" [(activeIndex)]="activeIndexes" class="border-0 shadow-none">
-          @for (section of sections; track $index) {
-            <p-accordionTab>
-              <ng-template pTemplate="header">
-                <div class="flex items-center justify-between w-full">
+          </div>
+          <!-- Filters -->
+          <p-accordion [multiple]="true" [(activeIndex)]="activeIndexes" class="border-0 shadow-none">
+            @for (section of sections; track $index) {
+              <p-accordionTab>
+                <ng-template pTemplate="header">
+                  <div class="flex items-center justify-between w-full">
                   <span class="font-semibold"
                         [class.text-red-600]="isOpen($index) && $index === 0">{{ section.title }}</span>
-                  <i class="pi" [ngClass]="isOpen($index) ? 'pi-minus text-red-600' : 'pi-plus text-gray-700'"></i>
+                    <i class="pi" [ngClass]="isOpen($index) ? 'pi-minus text-red-600' : 'pi-plus text-gray-700'"></i>
+                  </div>
+                </ng-template>
+
+                @if (section.items?.length) {
+                  <div class="space-y-3">
+                    @for (item of section.items; track item.label) {
+                      <div class="flex items-center gap-2 text-[14px]">
+                        <p-checkbox [(ngModel)]="item.checked" [binary]="true" [disabled]="item.disabled"></p-checkbox>
+                        <span class="w-3 h-3 rounded-sm"
+                              [ngClass]="item.disabled ? 'bg-gray-200' : 'bg-red-600'"></span>
+                        <span class="ml-1"
+                              [ngClass]="item.disabled ? 'text-gray-400' : 'text-gray-800'">{{ item.label }}</span>
+                      </div>
+                    }
+                  </div>
+                }
+                <div class="border-t mt-3" *ngIf="$index < sections.length - 1"></div>
+              </p-accordionTab>
+            }
+          </p-accordion>
+          <button pButton type="button" (click)="clearAll()" icon="pi pi-times"
+                  [label]="'ACTIONS.CLEAR_ALL' | transloco"
+                  severity="danger" class="w-full mt-4"></button>
+        </div>
+      </div>
+
+      <div *ngIf="loading" class="flex justify-center py-10">
+        <p-progressSpinner></p-progressSpinner>
+      </div>
+
+      <!-- Products grid -->
+      <main class="lg:col-span-3">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+          @for (p of filteredProducts(); track p.id) {
+            <p-card class="border border-gray-200 border-none">
+              <ng-template pTemplate="header">
+                <div class="bg-gray-100 border border-gray-200 rounded-md p-4">
+                  <p-image [src]="p.image" [alt]="p.name" [preview]="true"
+                           imageClass="h-48 w-full object-contain">
+                  </p-image>
                 </div>
               </ng-template>
-
-              @if (section.items?.length){
-                <div class="space-y-3">
-                  @for (item of section.items; track item.label) {
-                    <div class="flex items-center gap-2 text-[14px]">
-                      <p-checkbox [(ngModel)]="item.checked" [binary]="true" [disabled]="item.disabled"></p-checkbox>
-                      <span class="w-3 h-3 rounded-sm" [ngClass]="item.disabled ? 'bg-gray-200' : 'bg-red-600'"></span>
-                      <span class="ml-1"
-                            [ngClass]="item.disabled ? 'text-gray-400' : 'text-gray-800'">{{ item.label }}</span>
-                    </div>
-                  }
-                </div>
-              }
-              <div class="border-t mt-3" *ngIf="$index < sections.length - 1"></div>
-            </p-accordionTab>
-          }
-        </p-accordion>
-        <button pButton type="button" (click)="clearAll()" icon="pi pi-times" label="Clear All"
-                severity="danger" class="w-full mt-4"></button>
-      </div>
-    </div>
-
-    <div *ngIf="loading" class="flex justify-center py-10">
-      <p-progressSpinner></p-progressSpinner>
-    </div>
-
-    <!-- Products grid -->
-    <main class="lg:col-span-3">
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-        @for (p of filteredProducts(); track p.id) {
-          <p-card class="border border-gray-200 border-none">
-            <ng-template pTemplate="header">
-              <div class="bg-gray-100 border border-gray-200 rounded-md p-4">
-                <img [src]="p.image" [alt]="p.name" class="h-48 w-full object-contain"/>
+              <div class="mt-3">
+                <h3 class="text-gray-800 font-medium">{{ p.name }}</h3>
               </div>
-            </ng-template>
-            <div class="mt-3">
-              <h3 class="text-gray-800 font-medium">{{ p.name }}</h3>
-            </div>
-            <div class="mt-3 flex items-center gap-3">
-              <p-tag [value]="p.spec" severity="secondary" class="text-xs"></p-tag>
-              <button pButton type="button" label="Quote" severity="secondary" outlined="true"
-                      class="!text-xs"></button>
-            </div>
-          </p-card>
-        }
-      </div>
-    </main>
+              <div class="mt-3 flex items-center gap-3">
+                <p-tag [value]="p.spec" severity="secondary" class="text-xs"></p-tag>
+                <button pButton type="button" [label]="'ACTIONS.QUOTE' | transloco" severity="secondary" outlined="true"
+                        class="!text-xs"></button>
+              </div>
+            </p-card>
+          }
+        </div>
+      </main>
+    </div>
   </div>
 </div>
