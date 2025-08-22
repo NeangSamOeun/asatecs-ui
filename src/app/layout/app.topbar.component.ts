@@ -13,6 +13,7 @@ import { filter } from 'rxjs/operators';
 export class AppTopbarComponent implements OnInit, OnDestroy {
   menuItems: MenuItem[] = [];
   private sub = new Subscription();
+  private subs = new Subscription();
 
   languages: any[] = [
     { label: 'EN', value: 'en', flag: 'assets/images/flags/en.png' },
